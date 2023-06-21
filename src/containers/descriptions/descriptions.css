@@ -1,0 +1,73 @@
+.tesla__descripts {
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 4rem;
+}
+
+.tesla__descripts-heading {
+    width: 100%;
+    text-align: left;
+
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.tesla__descripts-heading h1 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 62px;
+    letter-spacing: -0.04em;
+}
+
+.tesla__descripts-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.tesla__descripts-container_batteries {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 990px) {
+    .tesla__descripts-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .tesla__descripts-heading h1 {
+        font-size: 56px;
+        line-height: 68px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tesla__descripts-container_batteries {
+        grid-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+   .tesla__descripts-container_batteries {
+    grid-template-columns: repeat(1, 1fr);
+   }
+
+    .tesla__descripts-heading h1 {
+        font-size: 46px;
+        line-height: 52px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .tesla__descripts-heading h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+}

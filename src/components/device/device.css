@@ -1,0 +1,86 @@
+.tesla__devices__container_device {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tesla__devices-container_device-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 0;
+}
+
+.tesla__devices-container_device-content p {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27.22px;
+    color: white;
+}
+
+.tesla__devices-container_device-widget {
+    display: flex;
+    flex-direction: row;
+}
+
+.tesla__devices-container_device_minus-btn,
+.tesla__devices-container_device_plus-btn {
+    font-size: 1em;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    color: black;
+
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+.tesla__devices-container_device_minus-btn {
+    border-radius: 4px 0 0 4px;
+}
+
+.tesla__devices-container_device_plus-btn {
+    border-radius: 0 4px 4px 0;
+}
+
+
+.tesla__devices-container_device_minus-btn:hover:not([disabled]),
+.tesla__devices-container_device_plus-btn:hover:not([disabled]) {
+    background-color: #B0B0B0;
+}
+
+.tesla__devices-container_device_minus-btn:active:not([disabled]),
+.tesla__devices-container_device_plus-btn:active:not([disabled]) {
+    background-color: #B0B0B0;
+    box-shadow: 0 1px #66666699;
+    transform: translateY(2px);
+}
+
+.tesla__devices-container_device_minus-btn:disabled,
+.tesla__devices-container_device_plus-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tesla__devices-container_device_input {
+    font-family: var(--font-family);
+    font-weight: 500;
+
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Other modern browsers */
+    width: 3rem; 
+    text-align: center;
+}
+  
+.tesla__devices-container_device_input::-webkit-outer-spin-button,
+.tesla__devices-container_device_input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    display: none;
+}

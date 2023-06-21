@@ -1,0 +1,57 @@
+.tesla__descripts-container_blurb {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    background-color: var(--color-footer);
+}
+
+.tesla__descripts-container_blurb-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1rem 1.5rem 2rem;
+    height: 100%;
+}
+
+.tesla__descripts-container_blurb-content h3 {
+    font-family: var(--font-family);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 35px;
+    color: white;
+
+    margin-bottom: .5rem;
+}
+
+.tesla__descripts-container_blurb-content p {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    
+    padding-top: .5rem;
+    margin-left: 1rem;
+}
+
+@media screen and (max-width: 990px) {
+    .tesla__descripts-container_blurb-content h3 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .tesla__descripts-container_blurb-content h3 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .tesla__descripts-container_blurb-content p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
