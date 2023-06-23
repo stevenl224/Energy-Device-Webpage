@@ -65,7 +65,7 @@ Please note that the website's responsiveness and layout may vary on different s
 To set up the development environment for this project, follow these instructions:
 
 1. npm install
-2. install react-icons
+2. npm install react-icons
 3. npm start
 
 ## Technologies Used
