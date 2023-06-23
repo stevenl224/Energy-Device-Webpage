@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Navbar } from './components';
-import { Devices, Layout, Descriptions } from './containers';
+import { Devices, Descriptions } from './containers';
 import './App.css'
 
 const App = () => {
@@ -12,7 +12,6 @@ const App = () => {
             <Descriptions />
         </div>
         <Devices />
-        <Layout />
     </div>
   )
 }
