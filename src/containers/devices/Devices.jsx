@@ -120,9 +120,12 @@ const Devices = () => {
               width += boxWidth;
               layout.push({ width: boxWidth, length: boxLength, config: boxConfig });
             }
-          } else {
-            // Handle special case for [10, 10] boxes
+          } else { // Handles special case for [10, 10] boxes
+            // finds placeholders and places 10 x 10 in the gaps
             if (layout.includes(0, 0)) {
+              if (width !== 100) {
+                width += boxWidth;
+              }
               let indx = layout.indexOf(0);
               layout.splice(indx, 1, { width: boxWidth, length: boxLength, config: boxConfig });
             }
