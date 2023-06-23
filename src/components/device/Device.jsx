@@ -2,6 +2,10 @@ import React from 'react'
 import './device.css'
 
 const Device = ({product, pname, deviceConfig, setDeviceConfig}) => {
+  const handleInputClick = (event) => {
+    event.target.select(); // Select the input's text when clicked
+  };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     let newValue = parseInt(value, 10);
@@ -26,7 +30,6 @@ const Device = ({product, pname, deviceConfig, setDeviceConfig}) => {
     const currentValue = deviceConfig[name];
 
     if (currentValue === '') {
-      // event.target.value = currentValue;
       event.target.value = 0;
       setDeviceConfig((prevConfig) => ({
         ...prevConfig,
@@ -78,6 +81,7 @@ const Device = ({product, pname, deviceConfig, setDeviceConfig}) => {
             className='tesla__devices-container_device_input'
             name={product}
             value={deviceConfig[product]}
+            onClick={handleInputClick}
             onChange={handleInputChange}
             onBlur={handleInputBlur}
           />

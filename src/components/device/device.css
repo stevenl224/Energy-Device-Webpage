@@ -18,7 +18,7 @@
 .tesla__devices-container_device-content p {
     font-family: var(--font-family);
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 27.22px;
     color: white;
 }
@@ -30,7 +30,7 @@
 
 .tesla__devices-container_device_minus-btn,
 .tesla__devices-container_device_plus-btn {
-    font-size: 1em;
+    font-size: 1.25em;
     font-weight: 700;
     justify-content: center;
     align-items: center;
@@ -70,12 +70,14 @@
 
 .tesla__devices-container_device_input {
     font-family: var(--font-family);
-    font-weight: 500;
+    font-weight: 800;
+    font-size: 20px;
 
     -moz-appearance: textfield; /* Firefox */
     appearance: textfield; /* Other modern browsers */
     width: 3rem; 
     text-align: center;
+    
 }
   
 .tesla__devices-container_device_input::-webkit-outer-spin-button,
@@ -83,4 +85,12 @@
     -webkit-appearance: none;
     margin: 0;
     display: none;
+}
+
+@media screen and (max-width: 990px) {
+    .tesla__devices-container_device-content p {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    
 }
