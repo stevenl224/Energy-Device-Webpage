@@ -1,8 +1,8 @@
 # Industrial Energy Device Site Layout Webpage
 This project aims to create a webpage that allows users to mockup the build of materials and site layout of an Industrial Energy Device site. The main goal is to design an intuitive user interface that enables the customer to configure the assembly of batteries and transformers according to their preferences.
 
-![Picture](assets\Descriptions.png)
-![Picture](assets\Layout.png)
+![Picture](assets/Descriptions.png)
+![Picture](assets/Layout.png)
 
 ## Battery Types and Properties
 
