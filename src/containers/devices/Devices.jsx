@@ -42,10 +42,13 @@ const Devices = () => {
     });
   };
 
+  // Calculates the total cost and energy for total batteries and transformers chosen
+
   const calculateTotals = () => {
     let cost = 0;
     let energy = 0;
 
+    // Find total cost and energy for each device and sum the values
     for (const [deviceKey, value] of Object.entries(deviceConfig)) {
       const deviceIndex = Number(deviceKey.replace('device', '')) - 1;
       const deviceValue = value;
@@ -56,22 +59,26 @@ const Devices = () => {
       cost += deviceValue * deviceCost;
       energy += deviceValue * deviceEnergy;
     }
-
-    setTotals({ cost, energy });
+    
+    setTotals({ cost, energy }); // Set total cost and energy
   };
 
+  // Function to handle calculate button being clicked
   const handleCalculateClick = () => {
     let batteries = (deviceConfig.device1 + deviceConfig.device2 + deviceConfig.device3 + deviceConfig.device4);
-    const device5Needed = Math.floor( batteries / 4 );
+    const device5Needed = Math.floor( batteries / 4 ); // 1 transformer is necessary for every 4 batteries
+    // Notifies user to ad ore transformers to fulfill requirement
     if (device5Needed > deviceConfig.device5) {
-      alert(`You need to add ${device5Needed - deviceConfig.device5} more Transformer(s)`)
+      alert(`You need to add ${device5Needed - deviceConfig.device5} more Transformer(s)`) 
       return;
     }
     calculateTotals();
     calculateOptimalSize();
   };
 
+  // Calculates and sets Optimal size and layout
   const calculateOptimalSize = () => {
+    // Map of device Sizes is created to store the length, width, # of that device, and the config #
     const boxes = deviceSizes.map((sizes, index) => ({
       length: sizes[0],
       width: sizes[1],
@@ -79,9 +86,9 @@ const Devices = () => {
       config: index + 1
     }));
   
-    const { length, width, layout } = findOptimalSize(boxes);
-    setOptimalSize({ length, width });
-    setBoxLayout(layout);
+    const { length, width, layout } = findOptimalSize(boxes); 
+    setOptimalSize({ length, width }); // updates length and width required to fit all devices
+    setBoxLayout(layout); // updates layout of devices
   };
 
   const findOptimalSize = (boxes) => {
@@ -90,14 +97,15 @@ const Devices = () => {
     let currWidth = 0;
     let layout = [];
     let newRow = false;
-  
+
     const sortedBoxes = boxes.sort((a, b) => {
-      // Sort boxes in descending order of max dimension
+      // Sort devices in descending order of max dimension
       const maxDimA = Math.max(a.length, a.width);
       const maxDimB = Math.max(b.length, b.width);
       return maxDimB - maxDimA;
     });
   
+    // sorting devices based on Greedy Algorithm - longest side. Place smaller devices in gap after all larger devices are placed
     sortedBoxes.forEach((box) => {
       const boxLength = box.width;
       const boxWidth = box.length;
@@ -106,7 +114,6 @@ const Devices = () => {
 
       for (let i = 0; i < boxCount; i++) {
         if (boxLength === 10 && boxWidth === 10) {
-
           if (newRow === false) {
             if (length === 0 && width === 0) {
               length += boxLength;
@@ -164,7 +171,7 @@ const Devices = () => {
               length += boxLength;
               currWidth += boxWidth;
               layout.push({ width: boxWidth, length: boxLength, config: boxConfig });
-            }
+            } 
           } else {
             if (currWidth === 0) {
               length += boxLength;
